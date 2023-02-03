@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      body {
+        background-image: url("file:///C:/Users/Gebruiker/Downloads/newimage.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+      h1 {
+        text-align: center;
+        margin-top: 100px;
+      }
+      form {
+        max-width: 400px;
+        margin: 100px auto;
+        padding: 40px;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      }
+      label {
+        display: block;
+        margin-bottom: 10px;
+      }
+      input[type="text"],
+      select {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 20px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+      }
+      input[type="submit"] {
+        width: 50%;
+        padding: 10px;
+        background-color: #af4c4c;
+        color: #fff;
+        border-radius: 5px;
+        border: none;
+        cursor: pointer;
+        font-size: 18px;
+      }
+      input[type="submit"]:hover {
+        background-color: #8e3e3e;
+      }
+      .output {
+        margin-top: 40px;
+        padding: 20px;
+        background-color: #eee;
+        border-radius: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>House price guesser !</h1>
+    <form method = "POST"> 
+      <div>
+        <label for="area">Locality:</label>
+        <input type="number" min=1000 max=9999 id="area">
+      </div>
+      <div>
+        <label for="property-type">Type of proprety:</label>
+        <select id="property-type">
+          <option value="HOUSE">House</option>
+          <option value="Appartement">Appartement</option>
+        </select>
+      </div>
+      <div>
+        <label for="Number_bedrooms">Numbers of bedrooms:</label>
+        <input type="number" min=1 max= 10 id="Number_bedrooms">
+      </div>
+      <div>
+        <label for="Living_area">Living Area:</label>
+        <input type="number" min=0 id="Living_area">
+      </div>
+      </div>
+      <input type="submit" value="Submit" onclick="displayValues()">
+    </form>
+    <div class="output" id="output"></div>
+    <script>
+    function displayValues() {
+        var area = document.getElementById("area").value;
+        var propertyType = document.getElementById("property-type").value;
+        var bedrooms = document.getElementById("Number_bedrooms").value;
+        var livingArea = document.getElementById("Living_area").value;
+        var result = "Locality: " + area + 
+                     " Type of property: " + propertyType + 
+                     " Number of bedrooms: " + bedrooms + 
+                     " Living area: " + livingArea;
+        document.getElementById("output").innerHTML = result;
+      }
+    </script>
+  </body>
+</html>
